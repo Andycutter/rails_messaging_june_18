@@ -4,10 +4,16 @@ Feature: Writing and sending a message
 	I would like to be able to send them messages
 
 	Background:
-		Given I am logged in and at my Inbox page
+        Given the following user exist in the database
+        | email             | name      | password       | password_confirmation|
+        | random@test.com   | randomguy | my-password    | my-password          |
+        | pablita@test.com  | Pablita   | my-password    | my-password          |
+        And I am logged in 
 
-	Scenario: Compose Email [Happy path]
-		When I press the 'Compose' button
+    Scenario: Compose Email [Happy path]
+        Given I am on my Inbox page
+        Then show me the page
+		When I press the 'Compose' link
 		Then I should be able to select a 'Recipient' by 'name'
 		And I fill out field 'Subject' with 'my subject'
 		And I fill out field 'Message' with 'my message'

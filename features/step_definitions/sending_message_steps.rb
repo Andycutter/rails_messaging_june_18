@@ -1,10 +1,14 @@
-Given("I am logged in and at my Inbox page") do
-    visit mailbox_inbox_path
+Given("I am logged in") do
+    
 end
   
-  When("I press the {string} button") do |string|
+Given("I am on my Inbox page") do
     pending # Write code here that turns the phrase above into concrete actions
-  end
+end
+  
+When("I press the {string} link") do |compose|
+    click_on compose
+end
   
   Then("I should be able to select a {string} by {string}") do |string, string2|
     pending # Write code here that turns the phrase above into concrete actions
