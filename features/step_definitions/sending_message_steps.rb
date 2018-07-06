@@ -11,12 +11,12 @@ When("I press the {string} link") do |compose|
     click_on compose
 end
   
-  Then("I should be able to select a {string} by {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+  And("I select {string} as {string}") do |name, recepients|
+    select(name, from: recepients)
   end
   
-  Then("I fill out field {string} with {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+  Then("I fill out field {string} with {string}") do |subject, my_subject|
+    fill_in subject, with: my_subject
   end
   
   Then("I click button {string}") do |string|
@@ -38,11 +38,7 @@ end
   When("I select Recipient with name {string}") do |string|
     pending # Write code here that turns the phrase above into concrete actions
   end
-  
-  When("I fill out field {string} with {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
+    
   Then("I should see error message {string}") do |string|
     pending # Write code here that turns the phrase above into concrete actions
   end
