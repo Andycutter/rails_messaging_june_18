@@ -15,10 +15,14 @@ end
     select(name, from: recepients)
   end
   
-  Then("I fill out field {string} with {string}") do |subject, my_subject|
+  Then("I fill out field {string} with {string}") do |subject, my_subject|   
     fill_in subject, with: my_subject
   end
-  
+
+  And("I fill the textarea {string} with {string}") do |message, text|
+    fill_in(message, with: text) 
+  end
+
   Then("I click button {string}") do |string|
     pending # Write code here that turns the phrase above into concrete actions
   end

@@ -14,9 +14,8 @@ Feature: Writing and sending a message
         Given I am on my Inbox page
 		When I press the 'Compose' link
 		And I select 'Pablita' as 'Recipients'
-		And I fill out field 'Subject' with 'my subject'
-		Then show me the page
-		And I fill out field 'Message' with 'my message'
+		And I fill out field 'Subject' with 'my_subject'
+		And I fill the textarea 'Message' with 'my message'
 		And I click button 'Send Message'
 		Then I should see the text 'Your message was successfully sent!'
 		And a message should be sent to 'Recipients'
