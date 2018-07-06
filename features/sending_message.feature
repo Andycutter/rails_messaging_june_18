@@ -19,7 +19,8 @@ Feature: Writing and sending a message
 		And I click button 'Send Message'
 		Then I should see the text 'Your message was successfully sent!'
 		And a message should be sent to 'Recipients'
-		And I should see the message on my 'Sent Page'
+		And I should see the message on my 'Sent' page
+		And Recipient should see the message on his 'Inbox' page
 	
 	Scenario: User does not choose Recipients [Sad path]
 		When I select Recipient with name ''
