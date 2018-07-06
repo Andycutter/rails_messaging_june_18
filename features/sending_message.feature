@@ -8,11 +8,10 @@ Feature: Writing and sending a message
         | email             | name      | password       | password_confirmation|
         | random@test.com   | randomguy | my-password    | my-password          |
         | pablita@test.com  | Pablita   | my-password    | my-password          |
-        And I am logged in 
 
     Scenario: Compose Email [Happy path]
+        And I am logged in as 'randomguy'
         Given I am on my Inbox page
-        Then show me the page
 		When I press the 'Compose' link
 		Then I should be able to select a 'Recipient' by 'name'
 		And I fill out field 'Subject' with 'my subject'

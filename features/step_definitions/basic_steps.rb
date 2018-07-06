@@ -1,10 +1,3 @@
-Before do
-    visit new_user_session_path
-    fill_in "Email", with: "random@test.com"
-    fill_in "Password", with: "my-password"
-    click_button "Log in"
-end
-
 Then("show me the page") do
     save_and_open_page
 end

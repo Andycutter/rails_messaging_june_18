@@ -1,9 +1,10 @@
-Given("I am logged in") do
-    
+Given("I am logged in as {string}") do |name|
+    @user = User.find_by(name: name)
+    login_as(@user, scope: :user)
 end
   
 Given("I am on my Inbox page") do
-    pending # Write code here that turns the phrase above into concrete actions
+    visit mailbox_inbox_path
 end
   
 When("I press the {string} link") do |compose|
